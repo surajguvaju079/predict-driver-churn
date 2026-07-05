@@ -21,8 +21,13 @@ model.fit(X_train,y_train)
 
 
 predictions = model.predict(X_test)
+
+
+
+importance = pd.Series(model.feature_importances_,index=X.columns)
 print(predictions)
 
 print(accuracy_score(y_test,predictions));
 print(confusion_matrix(y_test,predictions));
 print(classification_report(y_test,predictions))
+print(importance)
